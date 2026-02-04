@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    
+
+  </head>
+    
+  <body>
+  <!doctype html>
+<html lang="id" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imanuella Nadine - Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Poppins:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    * {
+      scroll-behavior: smooth;
+    }
+    
+    .font-playfair {
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .font-poppins {
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .gradient-bg {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #dee2e6 100%);
+    }
+    
+    .gradient-text {
+      background: linear-gradient(135deg, #495057 0%, #212529 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .card-gradient {
+      background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+    }
+    
+    .skill-bar {
+      background: linear-gradient(90deg, #6c757d 0%, #495057 100%);
+    }
+    
+    .nav-link {
+      position: relative;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #495057, #212529);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    
+    .floating-shape {
+      position: absolute;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(108, 117, 125, 0.1), rgba(73, 80, 87, 0.05));
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(5deg); }
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .animate-fade-in-up {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    
+    .project-card:hover .project-overlay {
+      opacity: 1;
+    }
+    
+    .project-card:hover img {
+      transform: scale(1.05);
+    }
+    
+    section {
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    
+    section:nth-child(1) { animation-delay: 0.1s; }
+    section:nth-child(2) { animation-delay: 0.2s; }
+    section:nth-child(3) { animation-delay: 0.3s; }
+    section:nth-child(4) { animation-delay: 0.4s; }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full font-poppins text-gray-700 gradient-bg overflow-auto">
+  <div class="w-full h-full overflow-auto"><!-- Header / Navigation -->
+   <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md shadow-sm transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-6 py-4">
+     <div class="flex items-center justify-between">
+      <div class="flex items-center gap-3">
+       <div class="w-10 h-10 rounded-full bg-gradient-to-br from-gray-600 to-gray-800 flex items-center justify-center text-white font-playfair font-bold text-lg">
+        I
+       </div>
+       <div>
+        <h1 id="site-name" class="font-playfair font-semibold text-gray-800 text-lg">Imanuella Nadine</h1>
+        <p id="tagline" class="text-xs text-gray-500">Aspiring Architect &amp; Interior Designer</p>
+       </div>
+      </div><!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-8"><a href="#home" class="nav-link text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Home</a> <a href="#about" class="nav-link text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">About</a> <a href="#skills" class="nav-link text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Skills</a> <a href="#portfolio" class="nav-link text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Portfolio</a> <a href="#experience" class="nav-link text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Experience</a> <a href="#contact" class="nav-link text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Contact</a>
+      </nav><!-- Mobile Menu Button --> <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors">
+       <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+       </svg></button>
+     </div><!-- Mobile Navigation -->
+     <nav id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-100 pt-4">
+      <div class="flex flex-col gap-3"><a href="#home" class="text-sm font-medium text-gray-600 hover:text-gray-900 py-2">Home</a> <a href="#about" class="text-sm font-medium text-gray-600 hover:text-gray-900 py-2">About</a> <a href="#skills" class="text-sm font-medium text-gray-600 hover:text-gray-900 py-2">Skills</a> <a href="#portfolio" class="text-sm font-medium text-gray-600 hover:text-gray-900 py-2">Portfolio</a> <a href="#experience" class="text-sm font-medium text-gray-600 hover:text-gray-900 py-2">Experience</a> <a href="#contact" class="text-sm font-medium text-gray-600 hover:text-gray-900 py-2">Contact</a>
+      </div>
+     </nav>
+    </div>
+   </header><!-- Hero Section -->
+   <section id="home" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden"><!-- Floating Shapes -->
+    <div class="floating-shape w-64 h-64 top-20 -left-20" style="animation-delay: 0s;"></div>
+    <div class="floating-shape w-48 h-48 top-40 right-10" style="animation-delay: 2s;"></div>
+    <div class="floating-shape w-32 h-32 bottom-20 left-1/4" style="animation-delay: 4s;"></div>
+    <div class="max-w-6xl mx-auto px-6 py-20">
+     <div class="flex flex-col lg:flex-row items-center gap-12"><!-- Profile Image -->
+      <div class="relative">
+       <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-2xl"><img src="https://img.sanishtech.com/u/1e68aaabc0bdd0dcfb2756a7897f70a2.jpeg" alt="Imanuella Nadine" loading="lazy" class="w-full h-full object-cover" onerror="console.error('Image failed to load:', this.src); this.style.background='#d1d5db'; this.alt='Foto profil tidak tersedia';">
+       </div>
+       <div class="absolute -bottom-2 -right-2 w-20 h-20 bg-white rounded-full shadow-lg flex items-center justify-center"><span class="text-3xl">✨</span>
+       </div>
+      </div><!-- Hero Content -->
+      <div class="text-center lg:text-left flex-1">
+       <p class="text-gray-500 font-medium mb-2 tracking-wider uppercase text-sm">Welcome to my portfolio</p>
+       <h1 id="hero-title" class="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold gradient-text mb-4 leading-tight">Imanuella Nadine<br>
+        Leathizia Wakanno</h1>
+       <p id="hero-role" class="text-xl md:text-2xl text-gray-600 font-light mb-6">Aspiring Architect &amp; Interior Designer</p>
+       <p id="hero-intro" class="text-gray-500 max-w-lg mb-8 leading-relaxed">Menciptakan ruang yang memadukan keindahan, fungsionalitas, dan keberlanjutan. Setiap desain adalah cerminan dari impian dan kebutuhan penghuninya.</p>
+       <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"><a href="#portfolio" class="px-8 py-3 bg-gradient-to-r from-gray-700 to-gray-900 text-white rounded-full font-medium hover:shadow-lg hover:scale-105 transition-all duration-300 text-center"> Lihat Portofolio </a> <a href="#contact" class="px-8 py-3 border-2 border-gray-400 text-gray-700 rounded-full font-medium hover:bg-gray-100 hover:border-gray-600 transition-all duration-300 text-center"> Hubungi Saya </a>
+       </div>
+      </div>
+     </div><!-- Scroll Indicator -->
+     <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+     </div>
+    </div>
+   </section><!-- About Section -->
+   <section id="about" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+     <div class="text-center mb-16">
+      <p class="text-gray-400 uppercase tracking-wider text-sm mb-2">Kenali Saya</p>
+      <h2 id="about-title" class="font-playfair text-3xl md:text-4xl font-bold gradient-text">Tentang Saya</h2>
+      <div class="w-20 h-1 bg-gradient-to-r from-gray-400 to-gray-600 mx-auto mt-4 rounded-full"></div>
+     </div>
+     <div class="grid md:grid-cols-2 gap-12 items-center"><!-- About Image -->
+      <div class="relative">
+       <div class="aspect-square rounded-2xl overflow-hidden shadow-2xl"><img src="https://img.sanishtech.com/u/b94703abce34f04f997414f6e425fd79.jpeg" alt="Imanuella Nadine" loading="lazy" class="w-full h-full object-cover" onerror="console.error('Image failed to load:', this.src); this.style.background='#d1d5db'; this.alt='Foto tidak tersedia';">
+       </div>
+       <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl -z-10"></div>
+      </div><!-- About Content -->
+      <div class="space-y-6">
+       <div class="card-gradient p-6 rounded-xl shadow-md border border-gray-100">
+        <div class="flex items-center gap-3 mb-3"><span class="text-2xl">👋</span>
+         <h3 class="font-playfair font-semibold text-lg text-gray-800">Latar Belakang</h3>
+        </div>
+        <p class="text-gray-600 leading-relaxed">Halo, saya Imanuella Nadine Leathizia Wakanno. Lahir di Ambon pada 2009, saya adalah pribadi disiplin yang gemar bereksplorasi. Portofolio ini adalah bukti dedikasi saya untuk terus bertumbuh, berkarya, dan memberikan kontribusi terbaik.</p>
+       </div>
+       <div class="card-gradient p-6 rounded-xl shadow-md border border-gray-100">
+        <div class="flex items-center gap-3 mb-3"><span class="text-2xl">🎯</span>
+         <h3 class="font-playfair font-semibold text-lg text-gray-800">Minat &amp; Tujuan</h3>
+        </div>
+        <p class="text-gray-600 leading-relaxed">Memiliki minat mendalam pada Arsitektur dan Desain Interior yang berawal dari hobi membuat miniatur serta menata ruang sejak kecil. Saya bertekad menciptakan hunian minimalis yang memadukan kerapian, fungsi, dan nilai estetika tinggi.</p>
+       </div>
+       <div class="card-gradient p-6 rounded-xl shadow-md border border-gray-100">
+        <div class="flex items-center gap-3 mb-3"><span class="text-2xl">🎓</span>
+         <h3 class="font-playfair font-semibold text-lg text-gray-800">Pendidikan</h3>
+        </div>
+        <p class="text-gray-600 leading-relaxed">Siswa SMAN 1 Subang yang berdedikasi mengejar karier di Arsitektur/Desain Interior. Menggabungkan kemampuan sketsa teknis dan pengalaman organisasi kreatif untuk menciptakan solusi hunian yang fungsional serta berdampak positif.</p>
+       </div>
+       <div class="card-gradient p-6 rounded-xl shadow-md border border-gray-100">
+        <div class="flex items-center gap-3 mb-3"><span class="text-2xl">💎</span>
+         <h3 class="font-playfair font-semibold text-lg text-gray-800">Keunggulan</h3>
+        </div>
+        <p class="text-gray-600 leading-relaxed">Ahli dalam ketelitian visual dan solusi spasial dengan fokus pada estetika material, pencahayaan, serta inovasi desain yang berkelanjutan dan berpusat pada pengguna.</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Skills Section -->
+   <section id="skills" class="py-20 gradient-bg">
+    <div class="max-w-6xl mx-auto px-6">
+     <div class="text-center mb-16">
+      <p class="text-gray-400 uppercase tracking-wider text-sm mb-2">Kemampuan</p>
+      <h2 class="font-playfair text-3xl md:text-4xl font-bold gradient-text">Keahlian Saya</h2>
+      <div class="w-20 h-1 bg-gradient-to-r from-gray-400 to-gray-600 mx-auto mt-4 rounded-full"></div>
+     </div>
+     <div class="grid md:grid-cols-2 gap-12"><!-- Hard Skills -->
+      <div class="card-gradient p-8 rounded-2xl shadow-lg border border-gray-100">
+       <h3 class="font-playfair text-xl font-semibold text-gray-800 mb-6 flex items-center gap-3"><span class="w-10 h-10 bg-gradient-to-br from-gray-600 to-gray-800 rounded-lg flex items-center justify-center text-white"> ���� </span> Hard Skills</h3>
+       <div class="space-y-5">
+        <div>
+         <div class="flex justify-between mb-2"><span class="text-gray-700 font-medium">Desain Interior</span> <span class="text-gray-500 text-sm">90%</span>
+         </div>
+         <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+          <div class="skill-bar h-full rounded-full" style="width: 90%;"></div>
+         </div>
+        </div>
+        <div>
+         <div class="flex justify-between mb-2"><span class="text-gray-700 font-medium">Sketsa Teknis</span> <span class="text-gray-500 text-sm">85%</span>
+         </div>
+         <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+          <div class="skill-bar h-full rounded-full" style="width: 85%;"></div>
+         </div>
+        </div>
+        <div>
+         <div class="flex justify-between mb-2"><span class="text-gray-700 font-medium">AutoCAD</span> <span class="text-gray-500 text-sm">75%</span>
+         </div>
+         <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+          <div class="skill-bar h-full rounded-full" style="width: 75%;"></div>
+         </div>
+        </div>
+        <div>
+         <div class="flex justify-between mb-2"><span class="text-gray-700 font-medium">SketchUp</span> <span class="text-gray-500 text-sm">80%</span>
+         </div>
+         <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+          <div class="skill-bar h-full rounded-full" style="width: 80%;"></div>
+         </div>
+        </div>
+        <div>
+         <div class="flex justify-between mb-2"><span class="text-gray-700 font-medium">Adobe Photoshop</span> <span class="text-gray-500 text-sm">70%</span>
+         </div>
+         <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+          <div class="skill-bar h-full rounded-full" style="width: 70%;"></div>
+         </div>
+        </div>
+       </div>
+      </div><!-- Soft Skills -->
+      <div class="card-gradient p-8 rounded-2xl shadow-lg border border-gray-100">
+       <h3 class="font-playfair text-xl font-semibold text-gray-800 mb-6 flex items-center gap-3"><span class="w-10 h-10 bg-gradient-to-br from-gray-600 to-gray-800 rounded-lg flex items-center justify-center text-white"> 🧠 </span> Soft Skills</h3>
+       <div class="grid grid-cols-2 gap-4">
+        <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-4 rounded-xl text-center hover:shadow-md transition-shadow"><span class="text-3xl mb-2 block">🎨</span> <span class="text-gray-700 font-medium text-sm">Kreativitas</span>
+        </div>
+        <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-4 rounded-xl text-center hover:shadow-md transition-shadow"><span class="text-3xl mb-2 block">💬</span> <span class="text-gray-700 font-medium text-sm">Komunikasi</span>
+        </div>
+        <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-4 rounded-xl text-center hover:shadow-md transition-shadow"><span class="text-3xl mb-2 block">🤝</span> <span class="text-gray-700 font-medium text-sm">Kerja Tim</span>
+        </div>
+        <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-4 rounded-xl text-center hover:shadow-md transition-shadow"><span class="text-3xl mb-2 block">⏰</span> <span class="text-gray-700 font-medium text-sm">Manajemen Waktu</span>
+        </div>
+        <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-4 rounded-xl text-center hover:shadow-md transition-shadow"><span class="text-3xl mb-2 block">🔍</span> <span class="text-gray-700 font-medium text-sm">Ketelitian</span>
+        </div>
+        <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-4 rounded-xl text-center hover:shadow-md transition-shadow"><span class="text-3xl mb-2 block">💡</span> <span class="text-gray-700 font-medium text-sm">Problem Solving</span>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Portfolio Section -->
+   <section id="portfolio" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+     <div class="text-center mb-16">
+      <p class="text-gray-400 uppercase tracking-wider text-sm mb-2">Karya Saya</p>
+      <h2 class="font-playfair text-3xl md:text-4xl font-bold gradient-text">Portofolio</h2>
+      <div class="w-20 h-1 bg-gradient-to-r from-gray-400 to-gray-600 mx-auto mt-4 rounded-full"></div>
+     </div>
+     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"><!-- Project 1 -->
+      <div class="project-card group relative rounded-2xl overflow-hidden shadow-lg cursor-pointer">
+       <div class="aspect-[4/3] bg-gradient-to-br from-gray-200 to-gray-400 flex items-center justify-center transition-transform duration-500">
+        <svg class="w-16 h-16 text-white/60" fill="currentColor" viewbox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+        </svg>
+       </div>
+       <div class="project-overlay absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-transparent opacity-0 transition-opacity duration-300 flex flex-col justify-end p-6">
+        <h3 class="font-playfair text-xl font-semibold text-white mb-2">Desain Rumah Minimalis</h3>
+        <p class="text-gray-300 text-sm mb-4">Konsep hunian modern dengan sentuhan minimalis yang elegan</p><span class="inline-flex items-center text-white text-sm font-medium"> Lihat Detail 
+         <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+         </svg></span>
+       </div>
+      </div><!-- Project 2 -->
+      <div class="project-card group relative rounded-2xl overflow-hidden shadow-lg cursor-pointer">
+       <div class="aspect-[4/3] bg-gradient-to-br from-gray-300 to-gray-500 flex items-center justify-center transition-transform duration-500">
+        <svg class="w-16 h-16 text-white/60" fill="currentColor" viewbox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h16v12zM6 10h2v2H6zm0 4h8v2H6zm10 0h2v2h-2zm-6-4h8v2h-8z" />
+        </svg>
+       </div>
+       <div class="project-overlay absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-transparent opacity-0 transition-opacity duration-300 flex flex-col justify-end p-6">
+        <h3 class="font-playfair text-xl font-semibold text-white mb-2">Interior Ruang Tamu</h3>
+        <p class="text-gray-300 text-sm mb-4">Desain ruang tamu nyaman dengan pencahayaan alami optimal</p><span class="inline-flex items-center text-white text-sm font-medium"> Lihat Detail 
+         <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+         </svg></span>
+       </div>
+      </div><!-- Project 3 -->
+      <div class="project-card group relative rounded-2xl overflow-hidden shadow-lg cursor-pointer">
+       <div class="aspect-[4/3] bg-gradient-to-br from-gray-400 to-gray-600 flex items-center justify-center transition-transform duration-500">
+        <svg class="w-16 h-16 text-white/60" fill="currentColor" viewbox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 18H7c-.55 0-1-.45-1-1V5c0-.55.45-1 1-1h10c.55 0 1 .45 1 1v14c0 .55-.45 1-1 1z" />
+        </svg>
+       </div>
+       <div class="project-overlay absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-transparent opacity-0 transition-opacity duration-300 flex flex-col justify-end p-6">
+        <h3 class="font-playfair text-xl font-semibold text-white mb-2">Miniatur Arsitektur</h3>
+        <p class="text-gray-300 text-sm mb-4">Karya miniatur bangunan dengan detail presisi tinggi</p><span class="inline-flex items-center text-white text-sm font-medium"> Lihat Detail 
+         <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+         </svg></span>
+       </div>
+      </div><!-- Project 4 -->
+      <div class="project-card group relative rounded-2xl overflow-hidden shadow-lg cursor-pointer">
+       <div class="aspect-[4/3] bg-gradient-to-br from-gray-250 to-gray-450 flex items-center justify-center transition-transform duration-500">
+        <svg class="w-16 h-16 text-white/60" fill="currentColor" viewbox="0 0 24 24"><path d="M12 3L2 12h3v9h6v-6h2v6h6v-9h3L12 3zm0 12c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" />
+        </svg>
+       </div>
+       <div class="project-overlay absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-transparent opacity-0 transition-opacity duration-300 flex flex-col justify-end p-6">
+        <h3 class="font-playfair text-xl font-semibold text-white mb-2">Konsep Kamar Tidur</h3>
+        <p class="text-gray-300 text-sm mb-4">Ruang tidur dengan atmosfer tenang dan fungsional</p><span class="inline-flex items-center text-white text-sm font-medium"> Lihat Detail 
+         <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+         </svg></span>
+       </div>
+      </div><!-- Project 5 -->
+      <div class="project-card group relative rounded-2xl overflow-hidden shadow-lg cursor-pointer">
+       <div class="aspect-[4/3] bg-gradient-to-br from-gray-350 to-gray-550 flex items-center justify-center transition-transform duration-500">
+        <svg class="w-16 h-16 text-white/60" fill="currentColor" viewbox="0 0 24 24"><path d="M8 16h8v2H8zm0-4h8v2H8zm6-10H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z" />
+        </svg>
+       </div>
+       <div class="project-overlay absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-transparent opacity-0 transition-opacity duration-300 flex flex-col justify-end p-6">
+        <h3 class="font-playfair text-xl font-semibold text-white mb-2">Sketsa Denah Rumah</h3>
+        <p class="text-gray-300 text-sm mb-4">Sketsa teknis denah dengan layout efisien</p><span class="inline-flex items-center text-white text-sm font-medium"> Lihat Detail 
+         <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+         </svg></span>
+       </div>
+      </div><!-- Project 6 -->
+      <div class="project-card group relative rounded-2xl overflow-hidden shadow-lg cursor-pointer">
+       <div class="aspect-[4/3] bg-gradient-to-br from-gray-500 to-gray-700 flex items-center justify-center transition-transform duration-500">
+        <svg class="w-16 h-16 text-white/60" fill="currentColor" viewbox="0 0 24 24"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z" />
+        </svg>
+       </div>
+       <div class="project-overlay absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-transparent opacity-0 transition-opacity duration-300 flex flex-col justify-end p-6">
+        <h3 class="font-playfair text-xl font-semibold text-white mb-2">Desain Apartemen</h3>
+        <p class="text-gray-300 text-sm mb-4">Konsep apartemen compact dengan storage optimal</p><span class="inline-flex items-center text-white text-sm font-medium"> Lihat Detail 
+         <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+         </svg></span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Experience Section -->
+   <section id="experience" class="py-20 gradient-bg">
+    <div class="max-w-6xl mx-auto px-6">
+     <div class="text-center mb-16">
+      <p class="text-gray-400 uppercase tracking-wider text-sm mb-2">Perjalanan Saya</p>
+      <h2 class="font-playfair text-3xl md:text-4xl font-bold gradient-text">Pengalaman &amp; Prestasi</h2>
+      <div class="w-20 h-1 bg-gradient-to-r from-gray-400 to-gray-600 mx-auto mt-4 rounded-full"></div>
+     </div>
+     <div class="grid md:grid-cols-2 gap-8"><!-- Experience -->
+      <div>
+       <h3 class="font-playfair text-xl font-semibold text-gray-800 mb-6 flex items-center gap-3"><span class="w-10 h-10 bg-gradient-to-br from-gray-600 to-gray-800 rounded-lg flex items-center justify-center text-white"> 📋 </span> Pengalaman Organisasi</h3>
+       <div class="space-y-4">
+        <div class="card-gradient p-5 rounded-xl shadow-md border border-gray-100 relative pl-8 before:content-[''] before:absolute before:left-3 before:top-6 before:w-2 before:h-2 before:bg-gray-500 before:rounded-full">
+         <p class="text-sm text-gray-500 mb-1">2023 - Sekarang</p>
+         <h4 class="font-semibold text-gray-800">Anggota OSIS</h4>
+         <p class="text-gray-600 text-sm">SMAN 1 Subang - Divisi Kreativitas</p>
+        </div>
+        <div class="card-gradient p-5 rounded-xl shadow-md border border-gray-100 relative pl-8 before:content-[''] before:absolute before:left-3 before:top-6 before:w-2 before:h-2 before:bg-gray-500 before:rounded-full">
+         <p class="text-sm text-gray-500 mb-1">2022 - 2023</p>
+         <h4 class="font-semibold text-gray-800">Koordinator Dekorasi</h4>
+         <p class="text-gray-600 text-sm">Panitia Pensi Sekolah</p>
+        </div>
+        <div class="card-gradient p-5 rounded-xl shadow-md border border-gray-100 relative pl-8 before:content-[''] before:absolute before:left-3 before:top-6 before:w-2 before:h-2 before:bg-gray-500 before:rounded-full">
+         <p class="text-sm text-gray-500 mb-1">2021 - 2022</p>
+         <h4 class="font-semibold text-gray-800">Anggota Ekstrakurikuler Seni</h4>
+         <p class="text-gray-600 text-sm">Fokus pada seni visual dan desain</p>
+        </div>
+       </div>
+      </div><!-- Achievements -->
+      <div>
+       <h3 class="font-playfair text-xl font-semibold text-gray-800 mb-6 flex items-center gap-3"><span class="w-10 h-10 bg-gradient-to-br from-gray-600 to-gray-800 rounded-lg flex items-center justify-center text-white"> 🏆 </span> Prestasi</h3>
+       <div class="space-y-4">
+        <div class="card-gradient p-5 rounded-xl shadow-md border border-gray-100 flex items-start gap-4">
+         <div class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg flex items-center justify-center flex-shrink-0"><span class="text-xl">🥇</span>
+         </div>
+         <div>
+          <h4 class="font-semibold text-gray-800">Juara 1 Lomba Desain Interior</h4>
+          <p class="text-gray-600 text-sm">Tingkat Kabupaten - 2023</p>
+         </div>
+        </div>
+        <div class="card-gradient p-5 rounded-xl shadow-md border border-gray-100 flex items-start gap-4">
+         <div class="w-12 h-12 bg-gradient-to-br from-gray-300 to-gray-500 rounded-lg flex items-center justify-center flex-shrink-0"><span class="text-xl">🥈</span>
+         </div>
+         <div>
+          <h4 class="font-semibold text-gray-800">Juara 2 Kompetisi Sketsa</h4>
+          <p class="text-gray-600 text-sm">Festival Seni Sekolah - 2022</p>
+         </div>
+        </div>
+        <div class="card-gradient p-5 rounded-xl shadow-md border border-gray-100 flex items-start gap-4">
+         <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg flex items-center justify-center flex-shrink-0"><span class="text-xl">📜</span>
+         </div>
+         <div>
+          <h4 class="font-semibold text-gray-800">Sertifikat Workshop Arsitektur</h4>
+          <p class="text-gray-600 text-sm">ITB Architecture Camp - 2023</p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Contact Section -->
+   <section id="contact" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+     <div class="text-center mb-16">
+      <p class="text-gray-400 uppercase tracking-wider text-sm mb-2">Mari Terhubung</p>
+      <h2 class="font-playfair text-3xl md:text-4xl font-bold gradient-text">Hubungi Saya</h2>
+      <div class="w-20 h-1 bg-gradient-to-r from-gray-400 to-gray-600 mx-auto mt-4 rounded-full"></div>
+     </div>
+     <div class="grid md:grid-cols-2 gap-12"><!-- Contact Info -->
+      <div class="space-y-6">
+       <p class="text-gray-600 leading-relaxed">Tertarik untuk berkolaborasi atau ingin berdiskusi tentang proyek desain? Jangan ragu untuk menghubungi saya melalui salah satu kontak di bawah ini.</p>
+       <div class="space-y-4"><a href="mailto:imanuella.nadine@email.com" class="card-gradient p-4 rounded-xl shadow-md border border-gray-100 flex items-center gap-4 hover:shadow-lg transition-shadow group">
+         <div class="w-12 h-12 bg-gradient-to-br from-gray-600 to-gray-800 rounded-lg flex items-center justify-center text-white group-hover:scale-110 transition-transform">
+          <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+          </svg>
+         </div>
+         <div>
+          <p class="text-sm text-gray-500">Email</p>
+          <p id="contact-email" class="text-gray-800 font-medium">imanuella.nadine@email.com</p>
+         </div></a> <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" class="card-gradient p-4 rounded-xl shadow-md border border-gray-100 flex items-center gap-4 hover:shadow-lg transition-shadow group">
+         <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-700 rounded-lg flex items-center justify-center text-white group-hover:scale-110 transition-transform">
+          <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+          </svg>
+         </div>
+         <div>
+          <p class="text-sm text-gray-500">WhatsApp</p>
+          <p id="contact-phone" class="text-gray-800 font-medium">+62 812 3456 7890</p>
+         </div></a> <a href="https://instagram.com/imanuella.nadine" target="_blank" rel="noopener noreferrer" class="card-gradient p-4 rounded-xl shadow-md border border-gray-100 flex items-center gap-4 hover:shadow-lg transition-shadow group">
+         <div class="w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-600 rounded-lg flex items-center justify-center text-white group-hover:scale-110 transition-transform">
+          <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+          </svg>
+         </div>
+         <div>
+          <p class="text-sm text-gray-500">Instagram</p>
+          <p class="text-gray-800 font-medium">@imanuella.nadine</p>
+         </div></a> <a href="https://linkedin.com/in/imanuella-nadine" target="_blank" rel="noopener noreferrer" class="card-gradient p-4 rounded-xl shadow-md border border-gray-100 flex items-center gap-4 hover:shadow-lg transition-shadow group">
+         <div class="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center text-white group-hover:scale-110 transition-transform">
+          <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+          </svg>
+         </div>
+         <div>
+          <p class="text-sm text-gray-500">LinkedIn</p>
+          <p class="text-gray-800 font-medium">Imanuella Nadine</p>
+         </div></a>
+       </div>
+      </div><!-- Contact Form -->
+      <div class="card-gradient p-8 rounded-2xl shadow-lg border border-gray-100">
+       <h3 class="font-playfair text-xl font-semibold text-gray-800 mb-6">Kirim Pesan</h3>
+       <form id="contact-form" class="space-y-5">
+        <div><label for="name" class="block text-sm font-medium text-gray-700 mb-2">Nama Lengkap</label> <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-gray-500 focus:ring-2 focus:ring-gray-200 outline-none transition-all" placeholder="Masukkan nama Anda">
+        </div>
+        <div><label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label> <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-gray-500 focus:ring-2 focus:ring-gray-200 outline-none transition-all" placeholder="email@example.com">
+        </div>
+        <div><label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subjek</label> <input type="text" id="subject" name="subject" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-gray-500 focus:ring-2 focus:ring-gray-200 outline-none transition-all" placeholder="Subjek pesan">
+        </div>
+        <div><label for="message" class="block text-sm font-medium text-gray-700 mb-2">Pesan</label> <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-gray-500 focus:ring-2 focus:ring-gray-200 outline-none transition-all resize-none" placeholder="Tulis pesan Anda..."></textarea>
+        </div><button type="submit" class="w-full py-3 bg-gradient-to-r from-gray-700 to-gray-900 text-white rounded-lg font-medium hover:shadow-lg hover:scale-[1.02] transition-all duration-300"> Kirim Pesan </button>
+       </form>
+       <div id="form-success" class="hidden mt-4 p-4 bg-green-50 border border-green-200 rounded-lg text-green-700 text-center">
+        ✅ Pesan Anda telah terkirim! Saya akan segera menghubungi Anda.
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Footer -->
+   <footer class="bg-gradient-to-br from-gray-800 to-gray-900 text-white py-12">
+    <div class="max-w-6xl mx-auto px-6">
+     <div class="grid md:grid-cols-3 gap-8 mb-8"><!-- Brand -->
+      <div>
+       <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center font-playfair font-bold text-lg">
+         I
+        </div>
+        <h3 class="font-playfair font-semibold text-lg">Imanuella Nadine</h3>
+       </div>
+       <p class="text-gray-400 text-sm leading-relaxed">Aspiring Architect &amp; Interior Designer dengan passion untuk menciptakan ruang yang indah dan fungsional.</p>
+      </div><!-- Quick Links -->
+      <div>
+       <h4 class="font-semibold mb-4">Quick Links</h4>
+       <div class="space-y-2"><a href="#home" class="block text-gray-400 hover:text-white transition-colors text-sm">Home</a> <a href="#about" class="block text-gray-400 hover:text-white transition-colors text-sm">About</a> <a href="#portfolio" class="block text-gray-400 hover:text-white transition-colors text-sm">Portfolio</a> <a href="#contact" class="block text-gray-400 hover:text-white transition-colors text-sm">Contact</a>
+       </div>
+      </div><!-- Social Media -->
+      <div>
+       <h4 class="font-semibold mb-4">Follow Me</h4>
+       <div class="flex gap-3"><a href="https://instagram.com/imanuella.nadine" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors">
+         <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+         </svg></a> <a href="https://linkedin.com/in/imanuella-nadine" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors">
+         <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+         </svg></a> <a href="mailto:imanuella.nadine@email.com" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors">
+         <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+         </svg></a>
+       </div>
+      </div>
+     </div>
+     <div class="border-t border-gray-700 pt-8 text-center">
+      <p class="text-gray-400 text-sm">© 2026 Imanuella Nadine Leathizia Wakanno. All rights reserved.</p>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <script>
+    // Default configuration
+    const defaultConfig = {
+      site_name: 'Imanuella Nadine',
+      tagline: 'Aspiring Architect & Interior Designer',
+      hero_title: 'Imanuella Nadine\nLeathizia Wakanno',
+      hero_role: 'Aspiring Architect & Interior Designer',
+      hero_intro: 'Menciptakan ruang yang memadukan keindahan, fungsionalitas, dan keberlanjutan. Setiap desain adalah cerminan dari impian dan kebutuhan penghuninya.',
+      about_title: 'Tentang Saya',
+      contact_email: 'imanuella.nadine@email.com',
+      contact_phone: '+62 812 3456 7890',
+      background_color: '#f8f9fa',
+      text_color: '#374151',
+      accent_color: '#4b5563',
+      font_family: 'Poppins',
+      font_size: 16
+    };
+
+    let config = { ...defaultConfig };
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu when clicking a link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Header scroll effect
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('shadow-md');
+      } else {
+        header.classList.remove('shadow-md');
+      }
+    });
+
+    // Contact form handling
+    const contactForm = document.getElementById('contact-form');
+    const formSuccess = document.getElementById('form-success');
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Show success message
+      formSuccess.classList.remove('hidden');
+      contactForm.reset();
+      
+      // Hide success message after 5 seconds
+      setTimeout(() => {
+        formSuccess.classList.add('hidden');
+      }, 5000);
+    });
+
+    // Smooth scroll for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const headerOffset = 80;
+          const elementPosition = target.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Render function to update UI based on config
+    async function onConfigChange(cfg) {
+      const customFont = cfg.font_family || defaultConfig.font_family;
+      const baseFontStack = 'Poppins, sans-serif';
+      const fontSize = cfg.font_size || defaultConfig.font_size;
+
+      // Update site name
+      document.getElementById('site-name').textContent = cfg.site_name || defaultConfig.site_name;
+      document.getElementById('tagline').textContent = cfg.tagline || defaultConfig.tagline;
+      
+      // Update hero section
+      const heroTitle = document.getElementById('hero-title');
+      heroTitle.innerHTML = (cfg.hero_title || defaultConfig.hero_title).replace('\n', '<br/>');
+      heroTitle.style.fontFamily = `Playfair Display, ${baseFontStack}`;
+      heroTitle.style.fontSize = `${fontSize * 3}px`;
+      
+      document.getElementById('hero-role').textContent = cfg.hero_role || defaultConfig.hero_role;
+      document.getElementById('hero-intro').textContent = cfg.hero_intro || defaultConfig.hero_intro;
+      
+      // Update about section
+      document.getElementById('about-title').textContent = cfg.about_title || defaultConfig.about_title;
+      
+      // Update contact info
+      document.getElementById('contact-email').textContent = cfg.contact_email || defaultConfig.contact_email;
+      document.getElementById('contact-phone').textContent = cfg.contact_phone || defaultConfig.contact_phone;
+
+      // Apply font family to body
+      document.body.style.fontFamily = `${customFont}, ${baseFontStack}`;
+      document.body.style.fontSize = `${fontSize}px`;
+    }
+
+    // Map to capabilities for SDK
+    function mapToCapabilities(cfg) {
+      return {
+        recolorables: [
+          {
+            get: () => cfg.background_color || defaultConfig.background_color,
+            set: (value) => {
+              cfg.background_color = value;
+              if (window.elementSdk) {
+                window.elementSdk.setConfig({ background_color: value });
+              }
+            }
+          },
+          {
+            get: () => cfg.text_color || defaultConfig.text_color,
+            set: (value) => {
+              cfg.text_color = value;
+              if (window.elementSdk) {
+                window.elementSdk.setConfig({ text_color: value });
+              }
+            }
+          },
+          {
+            get: () => cfg.accent_color || defaultConfig.accent_color,
+            set: (value) => {
+              cfg.accent_color = value;
+              if (window.elementSdk) {
+                window.elementSdk.setConfig({ accent_color: value });
+              }
+            }
+          }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => cfg.font_family || defaultConfig.font_family,
+          set: (value) => {
+            cfg.font_family = value;
+            if (window.elementSdk) {
+              window.elementSdk.setConfig({ font_family: value });
+            }
+          }
+        },
+        fontSizeable: {
+          get: () => cfg.font_size || defaultConfig.font_size,
+          set: (value) => {
+            cfg.font_size = value;
+            if (window.elementSdk) {
+              window.elementSdk.setConfig({ font_size: value });
+            }
+          }
+        }
+      };
+    }
+
+    // Map to edit panel values
+    function mapToEditPanelValues(cfg) {
+      return new Map([
+        ['site_name', cfg.site_name || defaultConfig.site_name],
+        ['tagline', cfg.tagline || defaultConfig.tagline],
+        ['hero_title', cfg.hero_title || defaultConfig.hero_title],
+        ['hero_role', cfg.hero_role || defaultConfig.hero_role],
+        ['hero_intro', cfg.hero_intro || defaultConfig.hero_intro],
+        ['about_title', cfg.about_title || defaultConfig.about_title],
+        ['contact_email', cfg.contact_email || defaultConfig.contact_email],
+        ['contact_phone', cfg.contact_phone || defaultConfig.contact_phone]
+      ]);
+    }
+
+    // Initialize SDK
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    } else {
+      // Run initial render if SDK not available
+      onConfigChange(config);
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c8886ab2419ea77',t:'MTc3MDE5MDg5MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
+    
+  </body>
+  
+</html>
